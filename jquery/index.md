@@ -1,5 +1,4 @@
-# jQuery
-
+# ![jQuery](https://logodownload.org/wp-content/uploads/2017/10/jquery-logo-6.png)
 jQuery es una biblioteca de funciones Javascript/ECMAscript, que permite operar de manera más sencilla e independiente del navegador o del grado de soporte o compatibilidad que este ofrece.
 
 jQuery se encargará de abstraer o emular la funcionalidad necesaria si el navegador no la ofrece.
@@ -9,7 +8,6 @@ jQuery se encargará de abstraer o emular la funcionalidad necesaria si el naveg
 ## Introducción y conceptos básicos
 
 ### Navegador web
-
 > Programa que permite visualizar información hipertextual y multimedia, e interactuar con ella, proveniente de otros ordenadores, a través de redes IP como Internet, mediante protocolos y estándares como HTTP, HTML, CSS y Javascript.
 
 ### Redes IP
