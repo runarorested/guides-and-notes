@@ -1,0 +1,111 @@
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="utf-8" /> 
+		<title>jQuery vs JSTítulo de la página</title>
+		
+		<style type="text/css">
+			.classic { background-color:red; color:silver;}
+			.modern { background-color:green; color:silver;}
+			.jquery { background-color:blue; color:silver;}
+			th,td { padding: 1rem; text-align:center;}
+			td a { margin:0 1rem; padding:0.25rem; }
+		</style>
+		
+
+		<script type="text/javascript">
+		onLoadHandler = function(event) { 
+			// BEGIN CODE EXECUTED ON LOAD HERE
+			// List of children nodes of TD#classic
+			var children = document.getElementById('classic').childNodes;
+			// Filtering nodes
+			var filtered = Array.prototype.filter.call(children, function(testedNode) {
+				return (testedNode.className == 'classic');
+			});
+			filtered.forEach(function(item){
+				item.style.textTransform = 'uppercase';
+				item.style.textDecoration = 'inherit';
+				item.style.fontWeight = 'bold';
+				item.style.color = 'white';
+				item.style.padding = '0.75rem';
+				item.innerHTML = '[' + item.innerHTML + ']';
+			});
+			
+			// END CODE EXECUTED ON LOAD HERE
+		};
+		</script>
+		
+		
+		<script type="text/javascript">
+		window.addEventListener('load', function(event){ 
+			// BEGIN CODE EXECUTED ON LOAD HERE
+			var nodes = document.querySelectorAll("#modern > .modern");
+			nodes.forEach( function(item, index, all) {
+				item.style.textTransform = 'uppercase';
+				item.style.textDecoration = 'inherit';
+				item.style.fontWeight = 'bold';
+				item.style.color = 'white';
+				item.style.padding = '0.75rem';
+				item.innerHTML = '[' + item.innerHTML + ']';
+			});
+			// END CODE EXECUTED ON LOAD HERE
+		});
+		</script>
+
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		//window.alert('Gentlemen, start your engines!');
+		$(document).ready(function(){
+			// BEGIN CODE EXECUTED ON LOAD HERE
+			$('#jquery > .jquery')
+				.css('text-transform', 'uppercase')
+				.css('text-decoration', 'inherit')
+				.css('font-weight', 'bold')
+				.css('color', 'white')
+				.css('padding', '0.75rem')
+				.each(function(i, node){
+					node.innerHTML = '[' + node.innerHTML + ']';
+				});
+			// END CODE EXECUTED ON LOAD HERE
+		});
+		</script>
+		
+	</head>
+	<body onload="onLoadHandler(this);">
+		<h1>Seleccion de elementos: Javascript clásico vs jQuery vs ECMAscript v4+</h1>
+		<p>En esta página hay varios documentos marcados con clases. Te incluyo el código empleado en cada uno de los tres métodos, para que compares la facilidad de uso y su eficiencia.</p>
+		
+		<table width="100%" border="1">
+			<thead>
+				<tr>
+					<th>Javascript clásico</th>
+					<th>ECMAscript v4+</th>
+					<th>jQuery</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="classic">
+						<a href="#" class="">Nada</a>
+						<a href="#" class="classic">JS Clásico</a>
+						<a href="#" class="modern">JS Moderno</a>
+						<a href="#" class="jquery">jQuery</a>
+					</td>
+					<td id="modern">
+						<a href="#" class="">Nada</a>
+						<a href="#" class="classic">JS Clásico</a>
+						<a href="#" class="modern">JS Moderno</a>
+						<a href="#" class="jquery">jQuery</a>
+					</td>
+					<td id="jquery">
+						<a href="#" class="">Nada</a>
+						<a href="#" class="classic">JS Clásico</a>
+						<a href="#" class="modern">JS Moderno</a>
+						<a href="#" class="jquery">jQuery</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+<html>

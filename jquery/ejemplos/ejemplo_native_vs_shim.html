@@ -1,0 +1,69 @@
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="utf-8" /> 
+		<title>Funcion nativo vs Shim vs Polifill</title>
+		
+		<style type="text/css">
+			.console {
+				background: navy;
+				color:silver;
+				font-family: monospace;
+			}
+		</style>
+		
+<!--
+		<script type="text/javascript">
+		onLoadHandler = function(event) { 
+			// BEGIN CODE EXECUTED ON LOAD HERE
+			// List of children nodes of TD#classic
+			var children = document.getElementById('classic').childNodes;
+			// Filtering nodes
+			var filtered = Array.prototype.filter.call(children, function(testedNode) {
+				return (testedNode.className == 'classic');
+			});
+			filtered.forEach(function(item){
+				item.style.textTransform = 'uppercase';
+				item.style.textDecoration = 'inherit';
+				item.style.fontWeight = 'bold';
+				item.style.color = 'white';
+				item.style.padding = '0.75rem';
+				item.innerHTML = '[' + item.innerHTML + ']';
+			});
+			
+			// END CODE EXECUTED ON LOAD HERE
+		};
+		</script>
+		
+		
+		<script type="text/javascript">
+		window.addEventListener('load', function(event){ 
+			// BEGIN CODE EXECUTED ON LOAD HERE
+			var nodes = document.querySelectorAll("#modern > .modern");
+			nodes.forEach( function(item, index, all) {
+				item.style.textTransform = 'uppercase';
+				item.style.textDecoration = 'inherit';
+				item.style.fontWeight = 'bold';
+				item.style.color = 'white';
+				item.style.padding = '0.75rem';
+				item.innerHTML = '[' + item.innerHTML + ']';
+			});
+			// END CODE EXECUTED ON LOAD HERE
+		});
+		</script>
+-->
+
+	</head>
+	<body>
+		<script type="text/javascript">
+		const numbers = [1, 2, 3, 4];
+		</script>
+	
+		<h1>Funcion moderna</h1>
+		<div class="console"><script type="text/javascript">
+numbers.forEach((item, index , array) => {
+    document.writeln("Index: " + index + " Value: " + item + " array " + array + '<br>');
+});
+		</script></div>
+	</body>
+<html>
